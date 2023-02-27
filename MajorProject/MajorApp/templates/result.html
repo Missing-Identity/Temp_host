@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<br>
+<br>
+<br>
+    <div class="flex justify-center gap-6">
+        {% for result in results %}
+        <div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="{{result.screenshot}}" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="content">
+        <p> Success: {{ result.success }}</p>
+        <p> Risk_Score: {{ result.risk_score }}</p>
+        <p> Phishsing: {{ result.phishing }}</p>
+        <p> Malware: {{ result.malware }}</p>
+        <p> Category: {{ result.category  }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+    </div>
+
+{% endblock %}

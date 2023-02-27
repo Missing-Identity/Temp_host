@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="antialiased">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
+    <!-- Uni-form Link -->
+    <link href="../static/css/uni-form.css" media="all" rel="stylesheet"/>
+    <link href="../static/css/default.uni-form.css" media="all" rel="stylesheet"/>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
+
+    <!-- Lato Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            },
+            plugins: [
+              require('@tailwindcss/forms'),
+            ],
+        }
+    </script>
+</head>
+
+<body class="font-sans leading-normal tracking-normal mt-10 bg-white" style="font-family: 'Lato', sans-serif;">
+
+    <!-- Navbar -->
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{% url 'index' %}">
+      <h1 class="font-bold text-black">A03</h1>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item text-black" href="{% url 'search' %}">
+        Scan
+      </a>
+  </div>
+</nav>
+
+    <!-- Content -->
+    <div class="container mx-auto">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+    
+
+</body>
+
+
+<script src="../static/js/navbar.js"></script>
+<script src="../static/js/modal.js"></script>
+
+<!-- Uni-form Script -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/uni-form.jquery.js"></script>
+<script type="text/javascript">
+ $(function(){
+   $('form.uniForm').uniform();
+ });
+</script>
+
+</html>
